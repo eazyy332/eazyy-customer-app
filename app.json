@@ -13,7 +13,8 @@
       "package": "com.eazyy.app"
     },
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "output": "static"
     },
     "plugins": [
       [
