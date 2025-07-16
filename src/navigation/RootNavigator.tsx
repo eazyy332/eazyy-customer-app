@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
@@ -81,120 +82,122 @@ const RootNavigator = () => {
   }
 
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: colors.background,
-          borderBottomColor: colors.border,
-          borderBottomWidth: 1,
-        },
-        headerTintColor: colors.textPrimary,
-        headerTitleStyle: {
-          fontWeight: '600',
-        },
-        headerShadowVisible: false,
-      }}
-    >
-      {!user ? (
-        // Authentication screens
-        <>
-          <Stack.Screen 
-            name="Login" 
-            component={LoginScreen}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name="Signup" 
-            component={SignupScreen}
-            options={{ headerShown: false }}
-          />
-        </>
-      ) : (
-        // Main app screens
-        <>
-          <Stack.Screen 
-            name="Main" 
-            component={MainTabNavigator} 
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name="NewOrder" 
-            component={ServiceSelectionScreen}
-            options={{ title: 'New Order' }}
-          />
-          <Stack.Screen 
-            name="OrderTracking" 
-            component={OrderTrackingScreen}
-            options={{ title: 'Track Order' }}
-          />
-          <Stack.Screen 
-            name="OrderHistory" 
-            component={OrderHistoryScreen}
-            options={{ title: 'Order History' }}
-          />
-          <Stack.Screen 
-            name="Account" 
-            component={AccountScreen}
-            options={{ title: 'Account' }}
-          />
-          <Stack.Screen 
-            name="Notifications" 
-            component={NotificationsScreen}
-            options={{ title: 'Notifications' }}
-          />
-          <Stack.Screen 
-            name="ServiceSelection" 
-            component={ServiceSelectionScreen}
-            options={{ title: 'Choose Service' }}
-          />
-          <Stack.Screen 
-            name="ItemSelection" 
-            component={ItemSelectionScreen}
-            options={{ title: 'Select Items' }}
-          />
-          <Stack.Screen 
-            name="Cart" 
-            component={CartScreen}
-            options={{ title: 'Your Cart' }}
-          />
-          <Stack.Screen 
-            name="TimeSlotSelection" 
-            component={TimeSlotSelectionScreen}
-            options={{ title: 'Pickup & Delivery' }}
-          />
-          <Stack.Screen 
-            name="AddressSelection" 
-            component={AddressSelectionScreen}
-            options={{ title: 'Address & Notes' }}
-          />
-          <Stack.Screen 
-            name="OrderSummary" 
-            component={OrderSummaryScreen}
-            options={{ title: 'Order Summary' }}
-          />
-          <Stack.Screen 
-            name="ProofOfDelivery" 
-            component={ProofOfDeliveryScreen}
-            options={{ title: 'Delivery Confirmation' }}
-          />
-          <Stack.Screen 
-            name="ChangePassword" 
-            component={ChangePasswordScreen}
-            options={{ title: 'Change Password' }}
-          />
-          <Stack.Screen 
-            name="CustomQuotes" 
-            component={CustomQuotesScreen}
-            options={{ title: 'Custom Quotes' }}
-          />
-          <Stack.Screen 
-            name="DiscrepancyReview" 
-            component={DiscrepancyReviewScreen}
-            options={{ title: 'Discrepancy Review' }}
-          />
-        </>
-      )}
-    </Stack.Navigator>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: colors.background,
+            borderBottomColor: colors.border,
+            borderBottomWidth: 1,
+          },
+          headerTintColor: colors.textPrimary,
+          headerTitleStyle: {
+            fontWeight: '600',
+          },
+          headerShadowVisible: false,
+        }}
+      >
+        {!user ? (
+          // Authentication screens
+          <>
+            <Stack.Screen 
+              name="Login" 
+              component={LoginScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+              name="Signup" 
+              component={SignupScreen}
+              options={{ headerShown: false }}
+            />
+          </>
+        ) : (
+          // Main app screens
+          <>
+            <Stack.Screen 
+              name="Main" 
+              component={MainTabNavigator} 
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+              name="NewOrder" 
+              component={ServiceSelectionScreen}
+              options={{ title: 'New Order' }}
+            />
+            <Stack.Screen 
+              name="OrderTracking" 
+              component={OrderTrackingScreen}
+              options={{ title: 'Track Order' }}
+            />
+            <Stack.Screen 
+              name="OrderHistory" 
+              component={OrderHistoryScreen}
+              options={{ title: 'Order History' }}
+            />
+            <Stack.Screen 
+              name="Account" 
+              component={AccountScreen}
+              options={{ title: 'Account' }}
+            />
+            <Stack.Screen 
+              name="Notifications" 
+              component={NotificationsScreen}
+              options={{ title: 'Notifications' }}
+            />
+            <Stack.Screen 
+              name="ServiceSelection" 
+              component={ServiceSelectionScreen}
+              options={{ title: 'Choose Service' }}
+            />
+            <Stack.Screen 
+              name="ItemSelection" 
+              component={ItemSelectionScreen}
+              options={{ title: 'Select Items' }}
+            />
+            <Stack.Screen 
+              name="Cart" 
+              component={CartScreen}
+              options={{ title: 'Your Cart' }}
+            />
+            <Stack.Screen 
+              name="TimeSlotSelection" 
+              component={TimeSlotSelectionScreen}
+              options={{ title: 'Pickup & Delivery' }}
+            />
+            <Stack.Screen 
+              name="AddressSelection" 
+              component={AddressSelectionScreen}
+              options={{ title: 'Address & Notes' }}
+            />
+            <Stack.Screen 
+              name="OrderSummary" 
+              component={OrderSummaryScreen}
+              options={{ title: 'Order Summary' }}
+            />
+            <Stack.Screen 
+              name="ProofOfDelivery" 
+              component={ProofOfDeliveryScreen}
+              options={{ title: 'Delivery Confirmation' }}
+            />
+            <Stack.Screen 
+              name="ChangePassword" 
+              component={ChangePasswordScreen}
+              options={{ title: 'Change Password' }}
+            />
+            <Stack.Screen 
+              name="CustomQuotes" 
+              component={CustomQuotesScreen}
+              options={{ title: 'Custom Quotes' }}
+            />
+            <Stack.Screen 
+              name="DiscrepancyReview" 
+              component={DiscrepancyReviewScreen}
+              options={{ title: 'Discrepancy Review' }}
+            />
+          </>
+        )}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
